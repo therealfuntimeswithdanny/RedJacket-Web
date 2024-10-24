@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style/info.css">
+  <title>Site info RedJacket Web | By MBD DEV</title>
+<script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="https://redjacket-web.cdn.madebydanny.uk/MBDTeamLogobyDesigner.png">
+</head>
+<body>
+
+  
+<div id="navbar">
+  <a class="active" href="index.html" id="logo">RedJacket Web</a>
+      <a href="https://dev.madebydanny.uk">By MBD DEV</a>
+  <div id="navbar-right">
+    <a href="about.html"><i class="fa-solid fa-user"></i>About</a>
+    <a href="templates.html"><i class="fa-solid fa-table-list"></i>Templates</a>
+    <a href="https://redjacket-web.madebydanny.uk/index.html#upload"><i class="fa-solid fa-upload"></i>Upload</a>
+    <a href="#"> | </a>
+    <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>    
+    <a onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></a>
+    <a class="active" href="#"><i class="fa-solid fa-info"></i>Info</a> 
+        <a onclick="myFunction1()" id="myBtn" title="Dark Mode"><i class="fa-solid fa-circle-half-stroke"></i></a> 
+    <a href="#"> | </a>
+    <a href="info.html"><i class="fa-brands fa-reddit"></i></a>
+    <a href="info.html"><i class="fa-brands fa-youtube"></i></a>
+    <a href="info.html"><i class="fa-brands fa-twitch"></i></a>
+    <a href="info.html"><i class="fa-brands fa-github"></i></a>
+  </div>
+</div>
+
+
+ <div class="row">
+   <div class="column50">
+     <div class="red">
+       <h2 id="upload">Github Info</h2>
+       <div id="repoInfo">Loading...</div>
+
+    <script>
+        fetch('https://api.github.com/repos/therealfuntimeswithdanny/MBD-DEV')
+            .then(response => response.json())
+            .then(data => {
+                const lastUpdated = new Date(data.updated_at).toLocaleString();
+                document.getElementById('repoInfo').innerText = `Last Updated: ${lastUpdated}`;
+            });
+    </script>
+    <p>This page was uploaded at Ashburn VA a GitHub Pages Server</p>
+    <p>This website is hosted in GitHub Pages</p>
+    <h2>Orther Info</h2>
+    <p>This website was coded in Microsoft Visual Studio Code and W3schools Spaces with help from Microsoft Copilot</p>
+     </div>
+    </div>
+
+    <div class="column50">
+     <div class="red">
+         <h2 id="about">Site Info</h2>
+         <h2>MBD CDN Info</h2>
+         <p>This site is powerd By MBD CDN<br> Version info: 2.1</p>
+         <h2>Cloudflare Info</h2>
+         <p>This site is backed and secured by Cloudflare you IP address may be saved. </p>
+    </div>
+</div>
+<hr>
+
+
+<div class="floater">
+<p>Powerd By MBD CDN | MBD DEV | Backed By Cloudflare</p>
+</div>
+<div class="github">
+   <script>
+        fetch('https://api.github.com/repos/therealfuntimeswithdanny/RedJacket-Web')
+            .then(response => response.json())
+            .then(data => {
+                const lastUpdated = new Date(data.updated_at).toLocaleString();
+                document.getElementById('repoInfo').innerText = `Last Updated From Github Pages at: ${lastUpdated}`;
+            });
+    </script>
+<script>
+
+
+
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+function myFunction1() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+
+</body>
+</html>
